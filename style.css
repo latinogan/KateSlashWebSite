@@ -1,33 +1,311 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
-    background-color:#050505;
-    width:100%;
-    height: 100px;
+
+
+body {
+    background-color: #0f0f0f;
+    color: white;
 }
 
-.logo-img{
-    width:250px;
-    height:100px;
+header {
+    background-color: #050505;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-nav{
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    padding: 0 5%;
+    height: 100px;
 }
-nav ul {
-    display:flex;
+
+.logo-img {
+    width: 180px;
+    height: auto;
+}
+
+.nav-menu {
+    display: flex;
     list-style: none;
-    padding:30px;
+     }
+
+.nav-menu li {
+    margin-left: 30px;
+    
+    }
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-family: "Montserrat", sans-serif;
+    font-style: bold;
+}
+
+.nav-menu a:hover {
+    color: #f5f56c; /* Dorado para combinar con tu logo */
+}
+
+/* Estilos del botón hamburguesa (oculto en desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffff; 
+    margin: 2px 0;
+    transition: 0.4s;
+}
+.hero {
+    position: relative;
+    height: 80vh; 
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que el video llene el espacio sin deformarse */
+    z-index: 1;
+}
+
+
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 3; /* Más alto que el video y el overlay */
+    text-align: center;
+    color: #f5f56c;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura para legibilidad */
+    z-index: 2;
+}
+
+.btn-cta {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #df811c;
+    color: white;
+    border: none;
+    box-shadow: #c0cfdd 0px 5px 15px;
+}
+
+.btn-cta:hover{
+    box-shadow: #dbe705 0px 5px 15px;
+}
+
+/* sobre nosotros section*/
+
+.aboutus {
+    padding: 80px 5%;
+    background-color: #0f0f0f;
+    overflow: hidden; /* Importante para que la animación no cree scroll lateral */
+}
+
+.aboutus h2 {
+    text-align: center;
+    color: #f5f56c;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+
+.content {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 50px;              
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bloque Imagen */
+.soimage {
+    flex: 1; 
+    max-width: 500px;
+}
+
+.soimage img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Bloque Texto */
+.seotext {
+    flex: 1;
     color: white;
 }
-nav ul li {
-   
-    padding-left:30px;
-    
+
+.seotext h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f5f56c;
 }
+
+.seotext p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* ---Animación --- */
+.anim-left {
+    opacity: 0;
+    transform: translateX(-100px); 
+    transition: all 1s ease-out;
+}
+
+.anim-right {
+    opacity: 0;
+    transform: translateX(100px); 
+    transition: all 1s ease-out;
+}
+
+.anim-left.show, .anim-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*end of sobre nosotros*/
+
+
+/* Responsivo para Móvil */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 100px;
+        flex-direction: column;
+        background-color: #161616;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px 0;
+        border-top: 1px solid #333;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    .hero {
+        height: 60vh; /* Un poco más corto en móvil */
+    }
+    .hero-content h1 {
+        font-size: 1.8rem; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+    
+
+    /* Animación del botón hamburguesa a X */
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/*aboutus section mobile*/
+.content {
+        flex-direction: column !important; 
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    /* Ajuste de la imagen en móvil */
+    .soimage {
+        width: 100% !important;
+        height: 300px !important;
+        margin: 0 auto !important;
+    }
+
+    .soimage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        border-radius: 15px;
+    }
+
+    
+    .seotext {
+        width: 100% !important;
+        padding: 0 10px;
+        text-align: center; 
+    }
+
+    .seotext h3 {
+        margin: 20px 0 10px 0 !important; 
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        margin-top: 10px !important;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    
+    .anim-left, .anim-right {
+        transform: translateY(30px) !important; 
+    }
+
+
+ }

@@ -1,36 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="style.css">
-    <title>KatherineCastillo</title>
-  <!--  <link rel="icon" href="/KateSlashWebSite/assets/faviconNB.webp" type="image/x-icon"> -->
-    <link rel="icon" href="/KateSlashWebSite/assets/gemfav1.png" sizes="16x16" type="image/x-icon" id="logo-favicon"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Katherine Castillo | Lash & Brow Spa</title>
+    <link rel="icon" href="/KateSlashWebSite/assets/gemfav1.png" type="image/png">
 </head>
 <body>
     
-    <header id="navigation-links">
-        <nav>
+    <header>
+        <nav class="navbar">
             <div class="logo">
-                <img src="/KateSlashWebSite/assets/logo2.jpeg" class="logo-img" alt="Logo">
+                <img src="/KateSlashWebSite/assets/logo2.jpeg" class="logo-img" alt="Logo Katherine Castillo">
+            </div>
 
-        </div>
-        <div>
-        <ul>
-            <li>Inicio</li>
-            <li>Sobre Nosotros</li>
-            <li>Catalogo</li>
-        </ul>
-        </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Catálogo</a></li>
+            </ul>
         </nav>
-
     </header>
-</body>
-<main id="hero-section">
-    
-    <h1>Katherine Web site</h1>
-    <p> esto es un texto</p>
-</main>
 
+    <main id="hero-section">
+       <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+        <source src="/KateSlashWebSite/assets/WhatsApp Video 2026-04-10 at 3.25.08 PM.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    </div>
+
+    <div class="hero-content">
+        <h1>Resalta la Belleza de tu Mirada</h1>
+        <p>Extensiones de pestañas y diseño de cejas con acabado profesional y natural.</p>
+        <button href="#" class="btn-cta">Ver Nuestro Catalogo</button>
+    </div>
+</section>
+
+<section class="aboutus">
+    <h2>Sobre Nosotros</h2>
+    
+    <div class="content">
+        <div class="soimage anim-left">
+            <img src="/KateSlashWebSite/assets/Soimage.jpeg" alt="Katherine Castillo Lash Spa">
+        </div>
+
+        <div class="seotext anim-right">
+            <h3>Nuestra Historia</h3>
+            <p>
+               ✨Bienvenida a un espacio dedicado a realizar tu belleza ✨
+Mi objetivo es brindarte una experiencia excepcional, donde te sientas cómoda, segura y plenamente satisfecha con un servicio de alta calidad.
+Mi nombre es KATE CASTILLO, especialista en extensiones de pestañas, Micropigmentación de cejas y labios . Cuento con más de 8 años de experiencia,durante los cuales he perfeccionado continuamente mis técnicas para ofrecer resultados  precisos, naturales y personalizados.
+Cada procedimiento está pensado para resaltar tu belleza natural y adaptarse a tus facciones y estilo.
+
+✨ Será un placer atenderte y ganarme tu confianza,ofreciéndote siempre un servicio profesional,dedicado y con mucho amor ❤️
+            </p>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
