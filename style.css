@@ -4,7 +4,13 @@
     box-sizing: border-box;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
+section {
+    /* Ajusta este valor (100px) a la altura exacta de tu header */
+    scroll-margin-top: 100px;
+}
 
 body {
     background-color: #0f0f0f;

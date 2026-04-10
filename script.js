@@ -13,6 +13,7 @@ hamburger.addEventListener('click', () => {
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        hamburger.classList.remove('is-active');
     });
 });
 
