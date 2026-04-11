@@ -220,6 +220,33 @@ header {
 /*end of sobre nosotros*/
 
 
+/*floating button*/
+.btn-whatsapp-fixed {
+    position: fixed;    /* Esto lo deja estático en la pantalla */
+    bottom: 20px;       /* Distancia desde el borde inferior */
+    right: 20px;        /* Distancia desde el borde derecho */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%; /* Lo hace redondo */
+    font-size: 30px;
+    z-index: 9999;      /* Para que siempre esté por encima del carrusel y videos */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-whatsapp-fixed i {
+    font-size: 53px; /* 32px suele ser el tamaño "dulce" para un botón de 60px */
+    padding-left: 4px;
+}
+
+.btn-whatsapp-fixed:hover {
+    background-color: #128c7e;
+    color: white;
+    transform: scale(1.1); /* Se agranda un poquito al pasar el mouse */
+}
+
+
 /* Responsivo para Móvil */
 @media (max-width: 768px) {
     .hamburger {
