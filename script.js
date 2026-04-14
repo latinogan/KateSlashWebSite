@@ -27,7 +27,18 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.2 // Se activa cuando el 20% de la imagen/texto es visible
 });
 
+
+
 // Seleccionamos los elementos a animar
 const hiddenElements = document.querySelectorAll('.anim-left, .anim-right');
 hiddenElements.forEach((el) => observer.observe(el));
 
+
+
+//page spinner
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader-wrapper');
+    setTimeout(() => {
+        loader.classList.add('loader-hidden');
+    }, 500);
+});

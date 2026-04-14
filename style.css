@@ -8,21 +8,99 @@ html {
     scroll-behavior: smooth;
 }
 section {
-    /* Ajusta este valor (100px) a la altura exacta de tu header */
+    
     scroll-margin-top: 100px;
 }
 
 body {
     background-color: #0f0f0f;
     color: white;
+    font-family: 'Lato', sans-serif;
+	font-size:18px;
+	color:white;
 }
 
+html, body
+{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/*-------------page spinner------------*/
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050505; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+/* ---------------logo container loader ---------------*/
+.loader-logo-container {
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(245, 245, 108, 0.3));
+}
+
+/*----------------- Style image logo loader -------------------*/
+.loader-logo {
+    width: 120px; 
+    height: auto;
+    border-radius: 50%; 
+    animation: pulseLogo 2s ease-in-out infinite;
+}
+
+#loader-wrapper p {
+    font-family: 'Montserrat', sans-serif;
+    color: #f5f56c; /* Tu dorado */
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    animation: fadeText 2s ease-in-out infinite;
+}
+
+/* --- ANIMACIONES --- */
+
+@keyframes pulseLogo {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05); 
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeText {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*---------end of page spinner-----------*/
+
 header {
-    background-color: #050505;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background-color: rgba(5, 5, 5, 0.85); 
+    backdrop-filter: blur(10px);          
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar {
@@ -45,7 +123,6 @@ header {
 
 .nav-menu li {
     margin-left: 30px;
-    
     }
 
 .nav-menu a {
@@ -53,15 +130,15 @@ header {
     color: white;
     font-weight: 500;
     transition: color 0.3s;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Gloock', serif;
     font-style: bold;
 }
 
 .nav-menu a:hover {
-    color: #f5f56c; /* Dorado para combinar con tu logo */
+    color: #f5f56c; 
 }
 
-/* Estilos del botón hamburguesa (oculto en desktop) */
+/* Hamburguer style (desktop hidden) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -77,6 +154,7 @@ header {
     margin: 2px 0;
     transition: 0.4s;
 }
+
 .hero {
     position: relative;
     height: 80vh; 
@@ -86,9 +164,8 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: 'Gloock', serif;
 }
-
-
 
 .hero-video {
     position: absolute;
@@ -96,24 +173,14 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Esto hace que el video llene el espacio sin deformarse */
+    object-fit: cover; 
     z-index: 1;
-}
-
-
-.hero {
-    position: relative;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 
 .hero-content {
     position: relative;
-    z-index: 3; /* Más alto que el video y el overlay */
+    z-index: 3; 
     text-align: center;
     color: #f5f56c;
 }
@@ -125,7 +192,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Capa oscura para legibilidad */
+    background: rgba(0, 0, 0, 0.4); 
     z-index: 2;
 }
 
@@ -136,18 +203,21 @@ header {
     color: white;
     border: none;
     box-shadow: #c0cfdd 0px 5px 15px;
+    text-decoration: none;
 }
 
 .btn-cta:hover{
     box-shadow: #dbe705 0px 5px 15px;
 }
 
-/* sobre nosotros section*/
+/*----------------- sobre nosotros section-------------------*/
 
 .aboutus {
     padding: 80px 5%;
-    background-color: #0f0f0f;
-    overflow: hidden; /* Importante para que la animación no cree scroll lateral */
+    overflow: hidden; 
+     background-color: rgba(5, 5, 5, 0.85); 
+    backdrop-filter: blur(10px);       
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .aboutus h2 {
@@ -155,6 +225,7 @@ header {
     color: #f5f56c;
     margin-bottom: 40px;
     font-size: 2.5rem;
+    font-family: 'Gloock', serif;;
 }
 
 
@@ -167,7 +238,7 @@ header {
     margin: 0 auto;
 }
 
-/* Bloque Imagen */
+/* -------------Bloque Imagen------------ */
 .soimage {
     flex: 1; 
     max-width: 500px;
@@ -181,10 +252,14 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Bloque Texto */
+/* ---------------Bloque De Texto---------------*/
 .seotext {
     flex: 1;
     color: white;
+}
+.seotext strong {
+    color: #f5f56c;
+    font-weight: 600;
 }
 
 .seotext h3 {
@@ -217,35 +292,206 @@ header {
     transform: translateX(0);
 }
 
-/*end of sobre nosotros*/
+/*-----------------end of sobre nosotros----------------*/
 
 
-/*floating button*/
+/*---------------- WSP floating button -------------------*/
 .btn-whatsapp-fixed {
-    position: fixed;    /* Esto lo deja estático en la pantalla */
-    bottom: 20px;       /* Distancia desde el borde inferior */
-    right: 20px;        /* Distancia desde el borde derecho */
+    position: fixed;    
+    bottom: 20px;       
+    right: 20px;        
     width: 60px;
     height: 60px;
     background-color: #25d366;
     color: white;
-    border-radius: 50%; /* Lo hace redondo */
+    border-radius: 50%; 
     font-size: 30px;
-    z-index: 9999;      /* Para que siempre esté por encima del carrusel y videos */
+    z-index: 9999;     
     text-decoration: none;
     transition: all 0.3s ease;
 }
 .btn-whatsapp-fixed i {
-    font-size: 53px; /* 32px suele ser el tamaño "dulce" para un botón de 60px */
+    font-size: 53px; 
     padding-left: 4px;
 }
 
 .btn-whatsapp-fixed:hover {
     background-color: #128c7e;
     color: white;
-    transform: scale(1.1); /* Se agranda un poquito al pasar el mouse */
+    transform: scale(1.1); 
 }
 
+.catalogo {
+     padding: 80px 5%;
+    background-color: #0f0f0f;
+    overflow: hidden; 
+ }
+
+.catalogo h3{
+     text-align: center;
+    color: #f5f56c;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+/*----------------Start Of Work Section ------------------------------------------------*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Lato&display=swap');
+
+
+*{-webkit-transition: all 0.4s ease-out!important;-moz-transition:  all 0.4s ease-out!important;-ms-transition: all 0.4s ease-out!important;-o-transition:  all 0.4s ease-out!important;
+transition: all 0.4s ease-out!important;}
+
+
+
+.gal
+{
+	margin-top:3rem;
+	-webkit-column-count: 4;
+	/* Chrome, Safari, Opera */
+	-moz-column-count: 4;
+	/* Firefox */
+	column-count: 4;
+}
+
+.gal img
+{
+	height:auto;
+}
+
+/*------------- DESIGN-------------- */
+
+
+.overlay
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: -2;
+	mix-blend-mode: hard-light;
+}
+
+.bg
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -3;
+	background-image:url(assets/working/backgroundimg.webp);
+	background-repeat:no-repeat;
+	background-size: cover;
+	min-height: 100%;
+}
+
+.gal-h-title
+{
+    color: #f5f56c;
+	text-align:center;
+    font-family: 'Gloock', serif;
+}
+
+.gal-h-title h2
+{
+	font-size:2.6rem;
+}
+.gal img , .img-hover-zoom{
+	border-radius: 25px;
+}
+
+.nav-pills .nav-link
+{
+	color:white;
+	padding:10px 20px;
+	text-transform:uppercase;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link, .nav-pills .nav-link.active:hover
+{
+	background: #df811c;
+  background: linear-gradient(135deg,#df811c,#d9f027);
+	border-radius:100px;
+}
+.nav-pills .nav-link:hover
+{
+	background: #dbe705;
+background: linear-gradient(135deg,#dbe705,#ecf8126e);
+	border-radius:100px;
+}
+
+
+/* ZOOM IN EFFECT */
+.img-hover-zoom
+{
+  padding:10px 0;
+	overflow: hidden;
+}
+
+/* Transition property for smooth transformation of images */
+.img-hover-zoom img
+{
+	transition: transform .5s ease;
+}
+
+/* Zoom-n-rotate Container */
+.img-hover-zoom--zoom-n-rotate img
+{
+	transition: transform .5s ease-in-out;
+}
+
+/* The Transformation */
+.img-hover-zoom--zoom-n-rotate:hover img
+{
+	transform: scale(1.6) rotate(25deg);
+}
+
+/*------end off work-----*/
+
+
+/*preguntas frecuentes*/
+
+.custom-dark-accordion .accordion-item {
+    background-color: #1a1a1a; 
+    border-bottom: 1px solid #333;
+    color: white;
+}
+
+.custom-dark-accordion .accordion-button {
+    background-color: #1a1a1a;
+    color: white;
+    box-shadow: none;
+}
+
+/* Cuando el acordeón está abierto */
+.custom-dark-accordion .accordion-button:not(.collapsed) {
+    background-color: #252525;
+    color: #f5f56c; 
+}
+
+/* Accordion El icono de la flecha (hacerlo blanco) */
+.custom-dark-accordion .accordion-button::after {
+    filter: invert(1);
+}
+
+.custom-dark-accordion .accordion-body {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+/* Estilo para el logo en FAQ */
+.faq-logo {
+    box-shadow: 0 0 20px rgba(245, 245, 108, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.faq-logo:hover {
+    transform: scale(1.05);
+}
 
 /* Responsivo para Móvil */
 @media (max-width: 768px) {
@@ -274,7 +520,7 @@ header {
         margin: 15px 0;
     }
     .hero {
-        height: 60vh; /* Un poco más corto en móvil */
+        height: 60vh; 
     }
     .hero-content h1 {
         font-size: 1.8rem; 
@@ -303,7 +549,7 @@ header {
         padding: 0 20px;
     }
 
-    /* Ajuste de la imagen en móvil */
+   
     .soimage {
         width: 100% !important;
         height: 300px !important;
@@ -340,5 +586,13 @@ header {
         transform: translateY(30px) !important; 
     }
 
+    .gal
+	{
+		-webkit-column-count: 1;
+		/* Chrome, Safari, Opera */
+		-moz-column-count: 1;
+		/* Firefox */
+		column-count: 1;
+	}
 
  }
