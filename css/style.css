@@ -383,10 +383,14 @@ transition: all 0.4s ease-out!important;}
 	width: 100%;
 	height: 100%;
 	z-index: -3;
-	background-image:url(../assets/working/backgroundimg2.webp);
+	background-image:url(../assets/working/backgrounddesk.webp);
 	background-repeat:no-repeat;
 	background-size: cover;
 	min-height: 100%;
+
+    background-position: center; /* Centra la imagen para que lo importante no se corte */
+    
+    /*height: 100vh;*/
 }
 
 .gal-h-title
@@ -664,6 +668,12 @@ background: linear-gradient(135deg,#dbe705,#ecf8126e);
         object-fit: cover; 
         border-radius: 15px;
     }
+
+    .bg{
+	
+	background-image:url(../assets/working/laboratory.webp);
+	
+}
 
     
     .seotext {
