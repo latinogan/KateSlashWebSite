@@ -5,6 +5,8 @@ This project involved the design, development, and comprehensive technical deplo
 
 **Live Site:** [https://katelashbeauty.com/](https://katelashbeauty.com/)
 
+![Site Responsive View](mockup-responsive.png)
+
 ## 🛠️ Tech Stack
 * **Frontend:** HTML5, CSS3 (Optimized and Minified), JavaScript (ES6+).
 * **Hosting & Domain:** Namecheap (Stellar Plan).
